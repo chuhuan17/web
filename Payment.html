@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!--------------------- Header -------------------------->
+    <header>
+        <div class="logo">
+           <a href=""> <img src="../img/jp.webp" alt=""></a>
+        </div>
+        <div class="menu">
+            <li><a href="">Nữ</a>
+                <ul class="sub-menu">
+                    <li><a href="">Hàng mới về</a></li>
+                    <li><a href="">Collection</a></li>
+                    <li><a href="">Áo</a></li>
+                        <ul>
+                            <li><a href="">Áo sơ mi</a></li>
+                            <li><a href="">Áo thun</a></li>
+                            <li><a href="">Áo Croptop</a></li>
+                            <li><a href="">Áo Peplum</a></li>
+                        </ul>
+                    <li><a href="">Quần</a></li>
+                        <ul>
+                            <li><a href="">Quần Jena</a></li>
+                            <li><a href="">Quần lửng</a></li>
+                            <li><a href="">Quần dài</a></li>
+                        </ul>
+                </ul>
+            </li>
+            <li><a href="">Nam</a>
+                <ul class="sub-menu">
+                    <li><a href="">Collection</a></li>
+                    <li><a href="">Áo</a></li>
+                        <ul>
+                            <li><a href="">Áo sơ mi</a></li>
+                            <li><a href="">Áo thun</a></li>
+                            <li><a href="">Áo Vest</a></li>
+                            <li><a href="">Áo Polo</a></li>
+                        </ul>
+                    <li><a href="">Quần</a></li>
+                        <ul>
+                            <li><a href="">Quần lửng/Short</a></li>
+                            <li><a href="">Quần dài</a></li>
+                        </ul>
+                </ul>
+            </li>
+            <li><a href="" style="color: red;">Siêu Sale T9</a>
+                <ul class="sub-menu">
+                    <li><a href="" style="color: red;">Sale up to 50%</a></li>
+                    <li><a href="">Áo</a>
+                    <li><a href="">Đầm</a></li>
+                    <li><a href="">Chân váy</a></li>
+                    <li><a href="">Quần</a></li>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="" style="color: red;">Final Sale Từ 50k</a>
+                <ul class="sub-menu">
+                    <li><a href="">Từ 50k đến 100k</a></li>
+                    <li><a href="">Từ 100k đến 400k</a></li>
+                    <li><a href="">Từ 400k trở lên</a></li>
+                </ul>
+            </li>
+            <li><a href="">Bộ Sưu Tập</a>
+                <ul class="sub-menu">
+                    <li><a href="">Modern Style</a></li>
+                    <li><a href="">The Dreamer</a></li>
+                    <li><a href="">Urban Chic</a></li>
+                </ul>
+            </li>
+            <li><a href="">Về Chúng Tôi</a>
+                <ul class="sub-menu">
+                    <li><a href="">Về IVY moda</a></li>
+                    <li><a href="">Fashion Show</a></li>
+                    <li><a href="">Hoạt động cộng đồng</a></li>
+                </ul>
+            </li>
+        </div>
+        <div class="other">
+            <li><input type="text" placeholder="Tìm kiếm"> <i class="fas fa-search"></i></li>
+            <li> <a class="fa fa-paw" href="" ></a></li>
+            <li> <a class="fa fa-user" href="DangNhap.html" ></a></li>
+            <li> <a class="fa fa-shopping-bag" href=""></a></li> 
+        </div>
+    </header>
+    <!--------------------- Payment ------------------------->
+    <section class="payment">
+        <div class="container">
+            <div class="payment-top-wrap">
+                <div class="delivery-top">
+                    <div class="payment-top-delivery payment-top-item">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="payment-top-address payment-top-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="payment-top-payment payment-top-item">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="payment-content row">
+                <div class="payment-content-left">
+                    <div class="payment-content-left-method-delivery">
+                        <p style="font-weight: bold;">Phương thức giao hàng</p>
+                        <div class="payment-content-left-method-delivery-item">
+                            <input checked type="radio">
+                            <label for="">Giao hàng chuyển phát nhanh</label>
+                        </div>
+                    </div>
+                    <div class="payment-content-left-method-payment">
+                        <p style="font-weight: bold;">Phương thức thanh toán</p>
+                        <p>Moi giao dich deu duoc bao mat va .....</p>
+                        <div class="payment-content-left-method-delivery-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Thanh toán bằng thẻ tín dụng</label>
+                        </div>
+                        <div class="payment-content-left-method-payment-item-img">
+                            <img src="img/visa.png" alt="">
+                        </div>
+                        <div class="payment-content-left-method-payment-item">
+                            <input checked name="method-payment" type="radio">
+                            <label for="">Thanh toán bằng thẻ ATM</label>
+                        </div>
+                        <div class="payment-content-left-method-payment-item-img"></div>
+                            <img src="#" alt="">
+                        </div>
+                        <div class="payment-content-left-method-payment-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Thanh toán bằng momo</label>
+                        </div>
+                        <div class="payment-content-left-method-payment-item-img">
+                            <img src="#" alt="">
+                        </div>
+                        <div class="payment-content-left-method-payment-item">
+                            <input name="method-payment" type="radio">
+                            <label for="">Thanh toán khi nhận hàng</label>
+                        </div>
+                    </div>
+                <div class="payment-content-right">
+                    <div class="payment-content-right-button">
+                        <input type="text" placeholder="Mã giảm giá/ Quà tặng">
+                        <button><i class="fas fa-check"></i></button>
+                    </div>
+                    <div class="payment-content-right-button">
+                        <input type="text" placeholder="Mã cộng tác viên">
+                        <button><i class="fas fa-check"></i></button>
+                    </div>
+                    <div class="payment-content-right-mnv">
+                        <select name="" id="">
+                            <option value="">Chọn mã nhân viên thân thiết</option>
+                            <option value="">D345</option>
+                            <option value="">I123</option>
+                            <option value="">C245</option>
+                            <option value="">E912</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-content-right-payment">
+                <button>Tiếp tục thanh toán</button>
+            </div>
+        </div>
+    </section>
+    <!-- ------------------ Footer -------------------------->
+     <hr>
+    <div class="footer-top">
+        <li><a href=><img src="img/img-congthuong.png" alt=""></a></li>
+        <li><a href="">Liên hệ</a></li>
+        <li><a href="">Tuyển dụng</a></li>
+        <li><a href="">Giới thiệu</a></li>
+        <li>
+            <a href="" class="fab fa-facebook-f"></a>
+            <a href="" class="fab fa-twitter"></a>
+            <a href="" class="fab fa-youtube"></a>
+        </li>
+    </div>
+    <div class="footer-center">
+        <p>
+            Công ty Cổ phần Dự Kìm với số đăng ký kinh doanh: 0105777650 <br>
+            Địa chỉ đăng ký. Tổ dân phố Tháp, P. Đại Mỗ, Q. Nam Từ Liêm, TP. Hà Nội, Việt Nam - 0243 205 2222 <br> 
+            Đặt hàng online : <b>0246 662 3434</b>.
+        </p>
+    </div>
+    <div class="footer-bottom">
+        © All rights reserved
+    </div>
+</body>
+
+</html>
