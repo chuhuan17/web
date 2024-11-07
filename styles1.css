@@ -33,52 +33,71 @@ a{
 .logo{
     flex: 1;
 }
-.menu{
+/* Định dạng cho phần menu chính */
+.menu {
     flex: 3;
     display: flex;
 }
+
 .menu > li {
     padding: 0 12px;
     position: relative;
 }
-.menu > li:hover .sub-menu{
+
+.menu > li:hover .sub-menu {
     visibility: visible;
     top: 45px;
-} 
-.sub-menu{
+}
+
+/* Định dạng cho sub-menu */
+.sub-menu {
     position: absolute;
     width: 150px;
     border: 1px solid #ccc;
-    padding: 10px 0px 10px 20px;
+    padding: 10px 0;
     visibility: hidden;
     top: 60px;
     transition: 0.3s;
-    z-index: 1  ;
+    z-index: 1;
     background: #fff;
 }
-.sub-menu ul{
-    padding-left: 20px;
+
+.sub-menu li {
+    list-style: none;
+    padding: 5px 15px;
 }
-.sub-menu ul a {
-    font-weight: normal !important;
-    font-size: 12px !important;
-}
-.menu  li  a {
+
+.sub-menu li a {
+    font-weight: normal;
     font-size: 12px;
-    font-weight: bold !important;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sub-menu li a:hover {
+    color: #ff6700;
+}
+
+/* Định dạng liên kết trong menu chính */
+.menu li a {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
     display: block;
     line-height: 20px;
-    transition: color 0.3s ease;
-}   
-.menu li a {
-    text-decoration: none;
-    color: #333; /* Màu chữ của các mục menu */
-    font-weight: 500; /* Độ dày vừa phải cho chữ */
-    padding: 10px 15px; /* Khoảng cách giữa chữ và viền */
-    display: block;
+    padding: 10px 15px;
     transition: color 0.3s ease;
 }
+
+.menu li a:hover {
+    color: #ff6700;
+}
+
+/* Phần điều chỉnh cho các biểu tượng khác */
 .other {
+    flex: 1;
     display: flex;
     align-items: center;
 }
@@ -86,26 +105,35 @@ a{
 .other > li {
     padding: 0 12px;
     position: relative;
-    display: flex;
-    align-items: center; /* Căn giữa nội dung trong mỗi ô */
 }
 
+/* Đường phân cách giữa các mục trong phần "other" */
+.other > li::after {
+    display: block;
+    content: "";
+    width: 1px;
+    height: 50%;
+    background: #cccccc;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.other > li:first-child::after {
+    display: none;
+}
+
+/* Điều chỉnh thanh tìm kiếm */
 .other > li:first-child {
-    flex: 1; /* Để thanh tìm kiếm chiếm không gian còn lại */
-}
-
-/* CSS cho form tìm kiếm */
-.other > li:first-child form {
     position: relative;
-    width: 100%;
-    display: flex; /* Đảm bảo các phần tử trong form nằm ngang hàng */
-    align-items: center;
+    flex: 3;
 }
 
-.other > li:first-child input[type="text"] {
+.other > li:first-child input {
     width: 100%;
     border: 1px solid #cccccc;
-    padding: 8px 40px 8px 12px; /* Tạo không gian cho icon */
+    padding: 8px 40px 8px 12px;
     border-radius: 20px;
     font-size: 16px;
     outline: none;
@@ -113,30 +141,22 @@ a{
     transition: border-color 0.3s ease;
 }
 
-/* CSS cho nút tìm kiếm */
-.other > li:first-child button {
-    position: absolute;
-    right: 15px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
-
-.other > li:first-child button i {
-    font-size: 18px;
-    color: #333;
-}
-
-/* Hiệu ứng khi hover vào thanh tìm kiếm */
 .other > li:first-child input:focus {
     border-color: #333;
 }
 
-/* CSS cho các biểu tượng khác */
+/* Đặt biểu tượng tìm kiếm ở bên phải thanh tìm kiếm */
+.other > li:first-child i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Định dạng cho các biểu tượng khác (user và cart) */
 .other > li a {
     font-size: 20px;
     color: #333;
@@ -146,7 +166,6 @@ a{
 .other > li a:hover {
     color: #ff6700;
 }
-
 
 
 /* ----------------signin---------------- */
@@ -194,14 +213,14 @@ a{
         height: 500px;
         position: relative; /* Thêm relative để các phần tử con như dot có thể được định vị */
     }
-    
+
     .aspect-ratio-169 {
         display: block;
         position: relative;
         padding-top: 56.25%;
         transition: 0.3s;
     }
-    
+
     .aspect-ratio-169 img {
         display: block;
         position: absolute;
@@ -210,7 +229,7 @@ a{
         top: 0;
         left: 0;
     } 
-    
+
     .dot-container {
         position: absolute;
         bottom: 20px; /* Giảm khoảng cách từ dot tới đáy slider */
@@ -221,7 +240,7 @@ a{
         text-align: center;
         justify-content: center;
     }
-    
+
     .dot {
         height: 16px;
         width: 16px;
@@ -230,11 +249,11 @@ a{
         margin-right: 12px;
         cursor: pointer;
     }
-    
+
     .dot.active {
         background-color: #333;
     }
-    
+
 /* --------------------app---------------------- */
 .app-container {
     text-align: center;
@@ -408,11 +427,6 @@ footer{
     color: #000;
     font-size: 12px;
 }
-.category-list {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Khoảng cách giữa các mục */
-}
 .pagination {
     display: flex;
     justify-content: center;
@@ -502,7 +516,7 @@ footer{
 
 /*---------------PRODUCT--------------*/
 .product{
-padding: 100px 0;
+    padding:  0; 
 }
 .product-top{
     margin-bottom: 30px;
@@ -524,17 +538,9 @@ padding: 100px 0;
 }
 .product-content-left-small-img {
     width: 20%;
-    
 }
-/* .product-content-left-small-img img{ 
+.product-content-left-small-img img{ 
     width: 100%;
-    width: 80px;
-    height: auto;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    padding: 5px;
-    border-radius: 4px;
-    transition: border 0.3s;
 }
 .product-content-right {
     width: 50%;
@@ -567,7 +573,7 @@ padding: 100px 0;
     align-items: center;
     justify-content: center;
     margin: 12px 0;
-} */
+}
 .size span {
     display: inline-block;
     padding: 3px 6px;
@@ -686,6 +692,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .product-content-right-product-QR{
     margin: 20px 0px;
+    width: 90px;
+    height: 90px;
 }
 .product-content-right-bottom{
     padding-top: 40px;
@@ -792,16 +800,19 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 12px;
     text-decoration: line-through;
 }
- /* --------------Delivery------------------- */
-.delivery{
-    padding: 100px 0;
+/* ---------------------delivery------------------------ */
+.delivery {
+    background-color: #f8f9fa; /* Nền sáng cho toàn bộ phần giao hàng */
+    padding: 20px; /* Padding cho toàn bộ delivery */
 }
-.delivery-top-wrap{
+
+.delivery-top-wrap {
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
- }
-.delivery-top{
+    justify-content: center; /* Khoảng cách dưới delivery-top */
+}
+
+.delivery-top {
     height: 2px;
     width: 70%;
     background-color: #dddddd;
@@ -810,373 +821,394 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     margin: 50px 0 100px;
 }
+
 .delivery-top-item {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #dddddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
+    width: 60px; /* Chiều rộng của icon */
+    height: 60px; /* Chiều cao của icon */
+    display: flex; /* Dùng flex để canh giữa icon */
+    justify-content: center; /* Canh giữa */
+    align-items: center; /* Canh giữa */
+    background-color: #007bff; /* Màu nền cho icon */
+    color: white; /* Màu chữ của icon */
+    border-radius: 50%; /* Bo tròn cho icon */
+    font-size: 28px; /* Kích thước icon */
 }
-.delivery-top-item i {
-    color: #dddddd;
+
+.delivery-content {
+    display: flex; /* Sử dụng flex để bố trí các phần tử con */
+    gap: 20px; /* Khoảng cách giữa các phần */
 }
-.delivery-top-address{
-    border: 1px solid #0db7ea;
+
+.delivery-content-left,
+.delivery-content-right {
+    flex: 1; /* Chiếm đều không gian */
+    background-color: white; /* Nền trắng cho các nội dung */
+    padding: 20px; /* Padding cho các nội dung */
+    border-radius: 8px; /* Bo góc cho các khung nội dung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho các khung */
 }
-.delivery-content-left{
-    width: 60%;
-    padding-right: 12px;
-}
+
 .delivery-content-left p {
-    font-family: var(--main-text-font);
-    font-size: 12px;
+    font-size: 18px; /* Kích thước chữ cho đoạn văn */
+    margin-bottom: 15px; /* Khoảng cách dưới cho đoạn văn */
 }
-.delivery-content-left label{
-    font-family: var(--main-text-font);
-    font-size: 12px;
-    margin-bottom: 6px;
-    display: block;
+
+.delivery-content-left-input-top {
+    display: flex; /* Sử dụng flex cho các trường nhập */
+    flex-wrap: wrap; /* Cho phép wrap cho các trường */
+    gap: 20px; /* Khoảng cách giữa các trường nhập */
 }
-.delivery-content-left > p {
+
+.delivery-content-left-input-top-item {
+    flex: 1; /* Chiếm đều không gian */
+    min-width: 200px; /* Chiều rộng tối thiểu cho các trường nhập */
+}
+
+.delivery-content-left-input-bottom-item {
+    margin-top: 15px; /* Khoảng cách trên cho trường nhập dưới */
+}
+
+.delivery-content-left-button {
+    display: flex; /* Flex cho các nút */
+    justify-content: space-between; /* Canh giữa */
+    align-items: center; /* Canh giữa */
+    margin-top: 20px; /* Khoảng cách trên cho button */
+}
+
+.delivery-content-right table {
+    width: 100%; /* Chiếm 100% chiều rộng */
+    border-collapse: collapse; /* Gộp viền bảng */
+}
+
+.delivery-content-right th,
+.delivery-content-right td {
+    padding: 10px; /* Padding cho ô */
+    text-align: left; /* Canh trái cho các ô */
+}
+
+.delivery-content-right th {
+    background-color: #007bff; /* Màu nền cho tiêu đề bảng */
+    color: white; /* Màu chữ cho tiêu đề bảng */
+}
+
+.delivery-content-right td {
+    background-color: #f8f9fa; /* Nền ô */
+}
+
+button {
+    background-color: #007bff; /* Nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    border: none; /* Không viền cho nút */
+    padding: 10px 15px; /* Padding cho nút */
+    border-radius: 5px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Thay đổi màu khi hover */
+}
+
+a {
+    color: #007bff; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Không gạch chân cho liên kết */
+    display: flex; /* Flex cho align icon và text */
+    align-items: center; /* Canh giữa cho icon và text */
+    gap: 5px; /* Khoảng cách giữa icon và text */
+}
+
+a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* --------------- Cart ------------------  */
+
+.cart {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cart-top-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cart-top {
+   
+        height: 2px;
+        width: 70%;
+        background-color: #dddddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0 100px;
+}
+
+.cart-top-cart {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.cart-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cart-content-left, .cart-content-right {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-content-left table, .cart-content-right table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-content-left table th, .cart-content-left table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cart-content-left table th {
+    background-color: #f1f1f1;
     font-weight: bold;
 }
-.delivery-content-dangnhap {
-    margin-top: 12px;
-}
-.delivery-content-dangnhap i {
-    font-size: 12px;
-    margin-right: 12px;
-}
-.delivery-content-left-khachle {
-    margin: 12px 0;
-}
-.delivery-content-left-khachle input {
-    margin-right: 12px;
-}
-.delivery-content-dangky input {
-    margin-right: 12px;
-}
-.delivery-content-left-input-top {
-    justify-content: space-between;
-}
-.delivery-content-left-input-top-item {
-    width: calc(50% - 12px);
-}
-.delivery-content-left-input-top-item input {
-    width: 100%;
-    height: 35px;
-    border: 1px solid #dddddd;
-    padding-left: 6px;
-}
-.delivery-content-left-input-bottom-item input {
-    width: 100%;
-    height: 35px;
-    border: 1px solid #dddddd;
-    padding-left: 6px;
-}
-.delivery-content-left-button{
-    justify-content: space-between;
-    padding-top: 20px;
-}
-.delivery-content-left-button p{
-    display: inline-block;
-    font-family: var(--main-text-font);
-    font-size: 12px;
-}
-.delivery-content-left-button span {
-    margin-right: 12px;
-}
-.delivery-content-left-button button{
-    height: 35px;
-    border: 2px solid #000;
-    padding: 6px 12px;
-    cursor: pointer;
-}
-.delivery-content-left-button button:hover{
-    background-color: black;
-    color: #fff;
-}
-.delivery-content-right {
-    width: 40%;
-    padding-left: 12px;
-    border-left: 2px solid #dddddd;
+
+.cart-content-left table td img {
+    width: 60px;
     height: auto;
 }
-.delivery-content-right table{
-    width: 100%;
-    font-family: var(--main-text-font);
-    font-size: 12px;
+
+.cart-content-left table td input[type="number"] {
+    width: 50px;
     text-align: center;
 }
-.delivery-content-right table tr th:first-child{
-    text-align: left;
-}
-.delivery-content-right table tr th {
-    padding-bottom: 12px;
-    border-bottom: 2px solid #dddddd;
-}
-.delivery-content-right table tr th:last-child{
-    text-align: left;
-}
-.delivery-content-right table tr td{
-    padding: 6px 0 ;
-}
-.delivery-content-right table tr:nth-child(4){
-    border-top: 2px solid #dddddd;
-}
-.delivery-content-right table tr td:last-child{
-    text-align: right;
-}
-.delivery-content-right table tr td:first-child{
-    text-align: left;
-}
-/* --------------- Cart ------------------  */
-.cart{
-    padding: 100px 0;
-}
-.cart-top-wrap{
-    display:flex ;
-    justify-content: center;
-    align-items: center;
-}
-.cart-top {
-    height: 2px;
-    width: 70%;
-    background-color: aliceblue;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 50px 0 100px;
-}
-.cart-top-item{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid#dddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-}
-.cart-top-item i {
-    color: #dddddd;
-}
-.cart-top-cart {
-    border: 1px solid #0db7ea;
-}
-.cart-top-cart i{
-    color: #0db7ea;
-}
-.cart-content-left{
-    flex: 2;
-    padding-right: 12px;
-}
-.cart-content-left table{
-    width: 100%;
-    text-align: center;
-}
-.cart-content-left table th{
-    padding-bottom: 30px;
-    font-family: var(--main-text-font);
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #333;
-    border-collapse: collapse;
-    border-bottom: 2px solid #dddd;
-}
-.cart-content-left table p{
-    font-family: var(--main-text-font);
-    font-size: 12px;
-    color: #333;
-}
-.cart-content-left table input{
-    width: 30px;
-}
-.cart-content-left table span{
-    display: block;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #dddddd;
+
+.cart-content-left table td span {
+    color: red;
     cursor: pointer;
+    font-weight: bold;
 }
-.cart-content-left table td {
-    padding: 20px 0;
-    border-bottom: 2px solid #dddd;
-}
-.cart-content-left td:first-child img{
-width: 130px;
-}
-.cart-content-left td:nth-child(2){
-    max-width: 130px;
-}
-.cart-content-left td:nth-child(3) img{
-    max-width: 30px;
-}
-.cart-content-right{
-    flex: 1;
-    padding-left: 12px;
-    border-left: 2px solid #dddddd;
-}
+
 .cart-content-right table {
-    width: 100%;
+    margin-bottom: 20px;
 }
+
 .cart-content-right table th {
-    padding-bottom: 30px;
-    font-family: var(--main-text-font);
-    font-size: 12px;
-    color: #333;
-    border-collapse: collapse;
-    border-bottom: 2px solid #dddddd;
+    padding: 15px;
+    background-color: #f1f1f1;
+    font-weight: bold;
+    text-align: left;
 }
+
 .cart-content-right table td {
-    font-family: var(--main-text-font);
-    font-size: 12px;
-    color: #333;
-    padding: 6px 0;
+    padding: 10px 15px;
+    text-align: left;
 }
-.cart-content-right tr:nth-child(4) td {
-    border-bottom: 2px solid #dddddd;
+
+.cart-content-right td p {
+    margin: 0;
+    font-weight: bold;
 }
-.cart-content-right tr td:last-child{
-    text-align: right;
-}
+
 .cart-content-right-text {
-    margin: 20px 0;
-    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #fef9e7;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
-.cart-content-right-text p {
-    font-family: var(--main-text-font);
-    font-size: 12px;
-    color: #333;
+
+.cart-content-right-text p:last-child {
+    color: red;
+    font-weight: bold;
 }
+
 .cart-content-right-button {
-    text-align: center;
-    align-items: center;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
-.cart-content-right-button button{
-    padding: 0 18px;
-    height: 35px;
-    cursor: pointer;
-}
-.cart-content-right-button button:first-child{
-    background-color: #fff;
-    border: 1px solid black;
-    margin-right: 20px;
-}
-.cart-content-right-button button:first-child:hover{
-    background-color: #dddd;
-}
-.cart-content-right-button button:last-child{
-    background-color: black;
-    color: #fff;
+
+.cart-content-right-button button {
+    flex: 1;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
     border: none;
-    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-.cart-content-right-button button:last-child:hover{
-    background-color: #dddddd;
-    color: black;
+
+.cart-content-right-button button:hover {
+    background-color: #0056b3;
 }
+
+.cart-content-right-dangnhap {
+    font-size: 14px;
+    text-align: center;
+}
+
+.cart-content-right-dangnhap p a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.cart-content-right-dangnhap p a:hover {
+    color: #0056b3;
+}
+
  /* --------------Payment--------------------- */
-.payment{
-    padding: 100px 0;
+
+.payment {
+    padding: 20px;
+    background-color: #f8f8f8;
 }
-.payment-top-wrap{
+
+
+
+.payment-top-wrap {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-bottom: 20px;
 }
-.payment-top{
-    height: 2px;
-    width: 70%;
-    background-color: #dddddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 50px 0 100px;
-}
+
 .payment-top-item {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    border: 1px solid #dddddd;
+    background-color: #007bff;
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.payment-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.payment-content-left, .payment-content-right {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.payment-content-left-method-delivery,
+.payment-content-left-method-payment {
+    margin-bottom: 20px;
+}
+
+.payment-content-left-method-delivery-item,
+.payment-content-left-method-payment-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #fff;
+    margin: 10px 0;
 }
-.payment-top-item i {
-    color: #dddddd;
+
+.payment-content-left-method-payment-item img {
+    width: 40px;
+    height: auto;
+    margin-left: 10px;
 }
-.payment-top-payment{
-    border: 1px solid #0db7ea;
-}
-.payment-top-payment i {
-    color: #0db7ea;
-}
-.payment-content-left{
-    width: 60%;
-}
-.payment-content-right{
-    width: 40%;
-    border-left: 2px solid #dddd;
-    padding-left: 12px;
-}
-.payment-content-right-button{
+
+.payment-content-right-button {
     display: flex;
-    padding: 12px 0;
-    border-bottom: 1px dashed #dddd;
+    align-items: center;
+    margin-bottom: 10px;
 }
-.payment-content-right input{
-    height: 30px;
-    width: 200px;
-    margin-right: 100px;
-    padding-left: 12px;
+
+.payment-content-right-button input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
 }
-.payment-content-right-button button{
-    height: 30px;
-    width: 100px;
-    background-color: #000;
+
+.payment-content-right-button button {
+    padding: 10px;
+    background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
 }
-.payment-content-right-mnv{
+
+.payment-content-right-mnv select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.payment-content-right-payment {
+    text-align: center;
     margin-top: 20px;
 }
-.payment-content-right-mnv select{
-    height: 30px;
-    width: 100%;
-    color: #75758a;
-    padding-left: 12px;
-}
-.payment-content-right-payment{
-    margin-top: 50px;
-    align-items: center;
-    text-align: center;
-}
-.payment-content-right-payment button{
-    height: 35px;
-    padding: 0 20px;
-    font-size: 12px;
-    color: #000;
+
+.payment-content-right-payment button {
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    border: none;
     cursor: pointer;
-    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
 }
-.payment-content-right-payment button:hover{
-    background-color: #000;
-    color: #fff;
+
+.payment-content-right-payment button:hover {
+    background-color: #218838;
 }
-.payment-content-left p,label{
-    font-size: 12px;
-    font-family: var(--main-text-font);
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .payment-content {
+        flex-direction: column;
+    }
+
+    .payment-top-wrap {
+        flex-direction: column;
+    }
+
+    .payment-top-item {
+        margin: 5px 0;
+    }
 }
+
  /* ---------------------list product------------------------ */
 /* Điều chỉnh kích thước sản phẩm */
 .product {
-    display: flex;
     min-width: 19%; /* Kích thước mỗi sản phẩm */
     box-sizing: border-box;
     padding: 10px;
@@ -1184,8 +1216,8 @@ width: 130px;
 }
 
 .product img {
-    width: 250px;
-    height: 368px;
+    width: 100%;
+    height: auto;
     object-fit: cover; /* Giữ tỷ lệ ảnh */
 }
 
@@ -1230,8 +1262,7 @@ button.next {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .link-product {
-    width:200px;
-    margin:0 auto;
+    
     background: #FFFFFF;
     border: 1px solid #221F20;
     box-sizing: border-box;
@@ -1240,21 +1271,7 @@ button.next {
     font-size: 16px;
     line-height: 20px;
     color: #221F20;
+    display: inline-block;
     text-align: center;
-    margin:20px auto; /* Đặt margin tự động hai bên để căn giữa */
-}
-.product-item {
-    flex: 0 0 auto; /* Ngăn không cho sản phẩm co giãn */
-    margin: 10px; /* Khoảng cách giữa các sản phẩm */
-    text-align: center; /* Canh giữa nội dung trong sản phẩm */ 
-    display: flex;
-}
-
-.product-item img {
-    max-width: 100%;
-    height: auto;
-}
-.img{
-    padding: 0 12px;
-    margin: 0 12px;
+    margin: 20px auto; /* Đặt margin tự động hai bên để căn giữa */
 }
